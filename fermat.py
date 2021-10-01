@@ -18,7 +18,7 @@ def fermat_test(n, k):
 
 
 print(fermat_test(8, 5))
-print(fermat_test(2, 5))
+print(fermat_test(12, 5))
 print(fermat_test(1317, 5))
 print(fermat_test(2709, 5))
 print(fermat_test(3257, 5))

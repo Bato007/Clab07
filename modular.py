@@ -1,3 +1,5 @@
+import random
+
 # Primer inciso
 def gcd(a, b):
   if (a == 0): return b
@@ -21,19 +23,31 @@ def inverseMod(a, n):
   return 'No tiene inverso'
 
 # Quinto inciso
+# n = 10, k = 5
 def primeGenerator(n, k):
-    if n == 2:
-        return True
+  primes = []
+  flag = 0
+  lowerLimit = 10**(n-1)
+  upperLimit = 10**(n)-1
 
-    if n % 2 == 0:
-        return False
+  while len(primes) < k:
+    numb = random.randint(lowerLimit, upperLimit)
+    if numb == 2:
+      primes.append(numb)
+    if numb % 2 == 0:
+      pass
+    for i in range(k):
+      a = random.randint(1, numb-1)
+      if pow(a, numb-1) % numb != 1:
+        pass
+      else:
+        flag += 1        
 
-    for i in xrange(k):
-        a = random.randint(1, n-1)
-
-        if pow(a, n-1) % n != 1:
-            return False
-    return True
+    if flag == k:
+      primes.append(numb)
+    flag = 0
+  
+  return primes
 
 def main():
   lab1 = [
@@ -65,6 +79,9 @@ def main():
   print('=====INCISO 3=====')
   for i in lab3:
     print('inverseMod(a = %i, n = %i) = %s' %(*i, str(inverseMod(*i))))
+
+  print('=====INCISO 5=====')
+  print(primeGenerator(10, 5))
 
 if (__name__ == '__main__'):
   main()
