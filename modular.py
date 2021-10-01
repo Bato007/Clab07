@@ -20,6 +20,21 @@ def inverseMod(a, n):
     return x % n
   return 'No tiene inverso'
 
+# Quinto inciso
+def primeGenerator(n, k):
+    if n == 2:
+        return True
+
+    if n % 2 == 0:
+        return False
+
+    for i in xrange(k):
+        a = random.randint(1, n-1)
+
+        if pow(a, n-1) % n != 1:
+            return False
+    return True
+
 def main():
   lab1 = [
     (1036, 240),
