@@ -81,7 +81,7 @@ def main():
     print('inverseMod(a = %i, n = %i) = %s' %(*i, str(inverseMod(*i))))
 
   print('=====INCISO 5=====')
-  print(primeGenerator(10, 5))
+  print(primeGenerator(7, 5))
 
 if (__name__ == '__main__'):
   main()
